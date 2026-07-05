@@ -18,18 +18,16 @@ parts:
   - file: notebooks/mpas_domain_shape_terrain
     title: "mpas domain shape and terrain"
   - file: notebooks/mpas_plotting
-    title: mpas-jedi plotting
-  - file: notebooks/obs_exploring
-    title: obs exploring
-  - file: notebooks/gsi
-    title: work with GSI
-  - file: notebooks/script-mpas-increments
-    title: script-MPAS analysis increment profile
+    title: "plot MPAS model results on the unstructed grid"
+  - file: notebooks/jedi_ioda
+    title: "work with JEDI ioda files"
+  - file: notebooks/jedi_diag_plots
+    title: "process and plot JEDI diag (jdiag) results"
   - file: notebooks/sat-qcfilters
-    title: work with satellite observations and filters
-  - file: notebooks/matplotlib-pyplot-demo
-    title: matplotlib-pyplot-demo
-  - file: notebooks/plotly-demo
-    title: plotly-demo
-  - file: notebooks/mpas_rotated_lonlat
-    title: obtain rotated lon/lat from MPAS grid
+    title: "work with satellite observations and filters"
+  - file: notebooks/gsi
+    title: "work with GSI diag files"
+  - file: notebooks/script-mpas-increments
+    title: "script-MPAS analysis increment profile"
+  - file: notebooks/gsibec_rotated_lonlat_MPAS
+    title: "GSIBEC-calculate rotated lon/lat parameters for a mpas grid"

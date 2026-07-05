@@ -1,0 +1,1 @@
+../.agent/mpasjedi/2026070100/jdiag_adpsfc_q183.nc

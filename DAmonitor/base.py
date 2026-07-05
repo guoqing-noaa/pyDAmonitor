@@ -96,11 +96,11 @@ def load_inv_bkg_ana(files):
 def query_dataset(dataset, meta_exclude=None):
     if dataset.groups:
         for grp in dataset.groups:
-            print(grp)
+            print(f"*{grp}")
             text = "    "
             if dataset.groups[grp].groups:
                 for nestgrp in dataset.groups[grp].groups:
-                    print(text + nestgrp)
+                    print("*" + text + nestgrp)
                     text2 = "    "
                     for var in dataset.groups[grp].groups[nestgrp].variables:
                         text2 += f"{var}, "
