@@ -41,7 +41,7 @@ class obsSpace:
         self._get_metadata()
 
         # Remove groups, provide direct access to varaibles, such as obsSpace.t, obsSpace.q, obsSpace.rh, obsSpace.u, obsSpace.v, etc
-        for var in ["airTemperature", "windEastward", "windNorthward", "specificHumidity",  "relativeHumidity", "stationPressre",
+        for var in ["airTemperature", "windEastward", "windNorthward", "specificHumidity",  "relativeHumidity", "stationPressure",
                     "dewpointTemperature", "virtualTemperature", "sensibleTemperature",
                     "brightnessTemperature", "radiance"]:
             self._get_data_by_varname(var)
