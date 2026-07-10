@@ -14,20 +14,20 @@ parts:
 - caption: DA Monitor
   chapters:
   - file: notebooks/cells
-    title: "Find and plot individual cells"
+    title: "1\\. Find and plot individual cells"
   - file: notebooks/mpas_domain_shape_terrain
-    title: "MPAS domain shape and terrain"
+    title: "2. MPAS domain shape and terrain"
   - file: notebooks/mpas_plotting
-    title: "Plot MPAS model results on the unstructured grid"
+    title: "3. Plot MPAS model results on the unstructured grid"
   - file: notebooks/jedi_ioda
-    title: "Work with JEDI IODA files"
+    title: "4. Work with JEDI IODA files"
   - file: notebooks/jedi_diag_plots
-    title: "Process and plot JEDI diag (jdiag) results"
+    title: "5. Process and plot JEDI diag (jdiag) results"
   - file: notebooks/sat-qcfilters
-    title: "Work with satellite observations and filters"
+    title: "6. Work with satellite observations and filters"
   - file: notebooks/gsi
-    title: "Work with GSI diag files"
+    title: "7. Work with GSI diag files"
   - file: notebooks/script-mpas-increments
-    title: "Script-MPAS analysis increment profile"
+    title: "8. Script-MPAS analysis increment profile"
   - file: notebooks/gsibec_rotated_lonlat_MPAS
-    title: "GSIBEC-calculate rotated lon/lat parameters for an MPAS grid"
+    title: "9. GSIBEC-calculate rotated lon/lat parameters for an MPAS grid"
