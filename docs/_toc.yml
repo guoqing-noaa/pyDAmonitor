@@ -31,3 +31,5 @@ parts:
     title: "8. Script-MPAS analysis increment profile"
   - file: notebooks/gsibec_rotated_lonlat_MPAS
     title: "9. GSIBEC-calculate rotated lon/lat parameters for an MPAS grid"
+  - file: notebooks/polygon_boundary_mpas
+    title: "10. Find MPAS boundary cells and simplify the domain polygon"

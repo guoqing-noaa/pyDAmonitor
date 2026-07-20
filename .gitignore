@@ -176,3 +176,5 @@ notebooks/keyframes
 2024050601
 .githooks
 yaml_factory
+tmp/
+*_polygon_config.yaml

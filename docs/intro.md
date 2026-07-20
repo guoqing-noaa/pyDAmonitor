@@ -24,6 +24,7 @@ Jupyter Notebooks are rendered in an on-prem RDHPCS and then sent to GitHub for 
 - [7. Work with GSI diag files](notebooks/gsi)
 - [8. Plot MPAS analysis increment profile](notebooks/script-mpas-increments)
 - [9. GSIBEC-calculate rotated lon/lat parameters for an MPAS grid](notebooks/gsibec_rotated_lonlat_MPAS)
+- [10. Find MPAS boundary cells and simplify the domain polygon](notebooks/polygon_boundary_mpas)
 
 # Contributors
 Guoqing Ge, Eric James, Junjun Hu, Shawn Murdzek, Haidao Lin, Sijie Pan, Keenan Eure, Aiden Pape, Ethan Chang, Ethan Wiese, Chunhua Zhou, Liaofan Lin, Ming Hu, Terra Ladwig

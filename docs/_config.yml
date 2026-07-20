@@ -35,3 +35,5 @@ html:
 sphinx:
   config:
     copyright: "2025"
+    html_js_files:
+      - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
