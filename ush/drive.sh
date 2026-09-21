@@ -19,14 +19,15 @@ export PYDAMONITOR=${HOMErrfs}/workflow/sideload/pyDAmonitor
 # Obtain unique process id (pid) and create the run directory (DATA).
 #-----------------------------------------------------------------------
 #
+spinup=$1
 export MY_COM_BASE=${COMROOT}/${NET}/${rrfs_ver}
 export LOG_DIR=${MY_COM_BASE}/logs/${RUN}.${PDY}/${cyc}/${WGF}
-if [[ "${DO_SPINUP:-FALSE}" == "TRUE" ]];  then
+export NONVAR_BUFR_LOG=$(ls ${LOG_DIR}/${NET}_nonvar_bufrobs_*_${CDATE}.log | head -n 1)
+export NONVAR_REFL_LOG=$(ls ${LOG_DIR}/${NET}_nonvar_reflobs_*_${CDATE}.log | head -n 1)
+if [[ "${spinup,,}" == "spinup" ]];  then
   export WORKDIR=${COMOUT}/pyDAmonitor_spinup/${WGF}
   export JEDI_DIR=${COMOUT}/jedivar_spinup/${WGF}
   export NONVAR_CLD_DIR=${COMOUT}/nonvar_cldana_spinup/${WGF}
-  export NONVAR_BUFR_LOG=$(ls ${LOG_DIR}/rrfs_nonvar_bufrobs_spinup_*_${CDATE}.log | head -n 1)
-  export NONVAR_REFL_LOG=$(ls ${LOG_DIR}/rrfs_nonvar_reflobs_spinup_*_${CDATE}.log | head -n 1)
 else
   export WORKDIR=${COMOUT}/pyDAmonitor/${WGF}
   export JEDI_DIR=${COMOUT}/jedivar/${WGF}
@@ -38,8 +39,6 @@ else
     fi
   fi
   export NONVAR_CLD_DIR=${COMOUT}/nonvar_cldana/${WGF}
-  export NONVAR_BUFR_LOG=$(ls ${LOG_DIR}/rrfs_nonvar_bufrobs_*_${CDATE}.log | head -n 1)
-  export NONVAR_REFL_LOG=$(ls ${LOG_DIR}/rrfs_nonvar_reflobs_*_${CDATE}.log | head -n 1)
 fi
 mkdir -p "${WORKDIR}"
 cd "${WORKDIR}"

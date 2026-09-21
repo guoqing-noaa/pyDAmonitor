@@ -177,6 +177,6 @@ notebooks/keyframes
 .githooks
 yaml_factory
 tmp/
-*_polygon_config.yaml
+*.polygon.yaml
 tests/my_com_data
 tests/prod
