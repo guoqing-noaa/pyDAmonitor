@@ -59,20 +59,21 @@ for i in $(seq 0 ${lookback}); do
     rmdir "${dstdir}/nonvar_cldana${spinup_str}/det" 2>/dev/null  # remove the directory if empty; error out if not empty
     rmdir "${dstdir}/nonvar_cldana${spinup_str}" 2>/dev/null  # remove the directory if empty; error out if not empty
   done
-  cyc=10#${current:8:2}  # tmp.debug
-  if (( cyc >= 3 && cyc <=8)) || (( cyc>=15 && cyc<=20)); then
-    cp -rp ${dstdir}/jedivar ${dstdir}/jedivar_spinup
-    cp -rp ${dstdir}/nonvar_cldana ${dstdir}/nonvar_cldana_spinup
-  fi
+  #cyc=10#${current:8:2}  # tmp.debug
+  #if (( cyc >= 3 && cyc <=8)) || (( cyc>=15 && cyc<=20)); then
+  #  cp -rp ${dstdir}/jedivar ${dstdir}/jedivar_spinup
+  #  cp -rp ${dstdir}/nonvar_cldana ${dstdir}/nonvar_cldana_spinup
+  #fi
   #
   # enkf results
   echo "process GETKF ${current}"
   mkdir -p "${dstdir}/getkf/enkf"
-  for enkf_str in "getkf_observer_solver" "getkf_post"; do
+  #for enkf_str in "getkf_observer_solver" "getkf_post"; do
+  for enkf_str in "getkf" "getkf_post"; do
     final_str="${enkf_str}"   # tmp.debug
-    if [[ "${enkf_str}" == "getkf_observer_solver" ]]; then
-      final_str="getkf"
-    fi
+    #if [[ "${enkf_str}" == "getkf_observer_solver" ]]; then
+    #  final_str="getkf"
+    #fi
     mkdir -p "${dstdir}/${final_str}/enkf"
     cd "${dstdir}/${final_str}/enkf"
     cp ${srcdir}/${enkf_str}/enkf/jdiag_*.nc .
