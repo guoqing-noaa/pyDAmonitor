@@ -1,26 +1,29 @@
 #!/bin/bash
 # prep new test data from RRFSv2x or a retro
 #
-lookback=8   # 240h=10days
 export RUN=rrfs
+lookback=240   # 240h=10days
+cdate=$(date -u +%Y%m%d%H)
 
 run_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 export MY_COM_BASE=${run_dir}/my_com_base
 
 if (( $# < 1 )); then
-  echo "Usage: prep_new_test_data.sh <src_com> [cdate]"
+  echo "Usage: prep_new_test_data.sh <src_com> [cdate] [nHours]"
   echo "src_com is required, it is the com/ directory holding rrfs.PDY/ directories"
   echo "  eg,rrfsv2x: /home/role.rtrr/rrfsv2x"
   echo "     retro: /gpfs/f6/bil-fire10-oar/world-shared/jjh/rrfsv2/RRFSv2X/L60/OPSROOT/RRFSv2X.retv3/com/rrfs/v2.1.4"
-  echo "cdate is the last cycle YYYYMMDDHH)"
+  echo "cdate is the last cycle (YYYYMMDDHH, default to current datetime in UTC)"
+  echo "nHours is to look back how many hours (default to 240h=10days) "
   exit
 fi
 
 src_com=$1
-if (( $# == 2)); then
+if (( $# >= 2)); then
   cdate=$2
-else  # if cdate is not provided, using current time (suitable for realtime runs)
-  cdate=$(date -u +%Y%m%d%H)
+fi
+if (( $# >= 3)); then
+  lookback=$3
 fi
 pdate=$(date -ud "${cdate:0:8} ${cdate:8:2} -${lookback} hours" +%Y%m%d%H)
 
@@ -56,7 +59,7 @@ for i in $(seq 0 ${lookback}); do
     rmdir "${dstdir}/nonvar_cldana${spinup_str}/det" 2>/dev/null  # remove the directory if empty; error out if not empty
     rmdir "${dstdir}/nonvar_cldana${spinup_str}" 2>/dev/null  # remove the directory if empty; error out if not empty
   done
-  cyc=${current:8:2}  # tmp.debug
+  cyc=10#${current:8:2}  # tmp.debug
   if (( cyc >= 3 && cyc <=8)) || (( cyc>=15 && cyc<=20)); then
     cp -rp ${dstdir}/jedivar ${dstdir}/jedivar_spinup
     cp -rp ${dstdir}/nonvar_cldana ${dstdir}/nonvar_cldana_spinup
