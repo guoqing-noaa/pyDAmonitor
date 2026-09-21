@@ -178,5 +178,4 @@ notebooks/keyframes
 yaml_factory
 tmp/
 *.polygon.yaml
-tests/my_com_data
-tests/prod
+tests/my_com_base
